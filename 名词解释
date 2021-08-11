@@ -1,0 +1,18 @@
+1、POI：Point of Interest，中文可翻译为“兴趣点”，在地理信息系统中，一个POI可以是一栋房子，一个商铺，一个邮筒，一个公交站；
+	每个POI包含四方面的信息，名称、类别、坐标、分类；
+	再通俗一点，POI就是我们在使用地图时，搜索相关位置后，地图上出现的相关标记点；
+
+2、AOI：兴趣面，带有边界坐标的POI。
+
+3、三大业务ID
+	a、device_id
+	    简称did，目前各业务线共认的设备ID，应用场景：数仓建设的重要维度，比如统计device_id维度的曝光、点击、点赞数、评论数、DAU、MAU等重要指标
+	    由APP客户端根据android_id或者KPN+android_id生成(账号中台有多种SDK)，同一设备在不同KPN下的device_id可能不同(调用区分KPN的SDK生成device_id造成)，同一设备的device_id可能会发生跳变(系统android_id可能由于刷机、被用户重置等原因跳变)
+
+	b、global_id
+	    简称gid，唯一且稳定标识一个设备，同一设备在不同业务线APP(KPN)之间拥有相同的global_id，目前还在优化中，业务线暂时使用的不多
+	    由服务端发码，除android_id外，会综合imei/oaid/机型/CPU/内存等因子生成，相较客户端侧生成的device_id更稳定
+
+	c、user_id
+	    简称uid, 用户使用手机号等注册的用户id
+
