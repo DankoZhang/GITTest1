@@ -25,12 +25,14 @@
 4、将新建代码文件由暂存区提交至本地git仓库
 	 git commit -m "注释"
 
-5、本地git仓库关联到远程git仓库
+5、建立远程git仓库(project)
+
+6、本地git仓库关联到远程git仓库
 	 git remote add origin 远程库地址(git@git.corp.kuaishou.com:username/projectname.git)            
 
-6、远程git库与本地git库同步合并，拉取远端代码，更新本地库
+7、远程git库与本地git库同步合并，拉取远端代码，更新本地库
 	 git pull --rebase origin master
 
-7、将本地git库内容推送至远程git库
+8、将本地git库内容推送至远程git库
 	 git push -u origin master(初次推送，需要加上参数-u)
 
