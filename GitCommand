@@ -4,14 +4,14 @@
 	将远程git库同步至本地，并在本地进行更改，然后再推至远程库
 
 1、git仓库克隆至本地
- (1) git clone git@git.corp.kuaishou.com:username/projectname.git 文件夹名称
-	 git clone git@git.corp.kuaishou.com:zhangce03/GITTest1ZC.git 文件夹名称
+ (1) git clone git@github.com:username/projectname.git 文件夹名称
+	 git clone git@github.com:DankoZhang/GitCommand.git 文件夹名称
 	 注：文件夹名称可以不写，不写默认将projectname作为本地文件夹名称
 
 2、本地修改代码文件，并同步至git仓库
      git add test.scala				-- 添加更改
      git commit -m "注释"			-- 提交更改
-     git push origin master			-- 将更改推送至远程git仓库
+     git push -u origin master			-- 将更改推送至远程git仓库
 
 
 二、本地库关联至远程git库
@@ -42,9 +42,14 @@
 7、远程git库与本地git库同步合并，拉取远端代码，更新本地库
 	 git pull --rebase origin master
 
-	 若远程库新建，没有任何文件，则可以跳过这一步
+	 若远程库为新建，没有任何文件，则可以跳过这一步
 
 8、将本地git库内容推送至远程git库
 	 git push -u origin master(初次推送，需要加上参数-u)
 
-9、
+
+三、删除远程库文件
+
+第一步：git rm 文件名
+第二步：git commit -m "delete ***"
+第三步：git push -u origin master
