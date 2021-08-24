@@ -1,6 +1,7 @@
 
 
 一、远程git库克隆至本地（常用）
+	将远程git库同步至本地，并在本地进行更改，然后再推至远程库
 
 1、git仓库克隆至本地
  (1) git clone git@git.corp.kuaishou.com:username/projectname.git 文件夹名称
@@ -14,6 +15,8 @@
 
 
 二、本地库关联至远程git库
+	将本地文件夹转为本地git库，并与远程git库关联上
+
 1、本地新建文件夹
 
 2、将本地文件夹转为git可以管理的仓库
@@ -44,4 +47,3 @@
 8、将本地git库内容推送至远程git库
 	 git push -u origin master(初次推送，需要加上参数-u)
 
-9、
