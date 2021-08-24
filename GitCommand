@@ -27,13 +27,20 @@
 
 5、建立远程git仓库(project)
 
-6、本地git仓库关联到远程git仓库
-	 git remote add origin 远程库地址(git@git.corp.kuaishou.com:username/projectname.git)            
+6、将远程git库添加至本地，且命名为origin，实现远程git库和本地库的关联，之后便可对远程库及本地库之间进行pull、push操作
+	 git remote add origin 远程库地址(git@github.com:username/projectname.git)
+
+	 git remote add origin git@github.com:DankoZhang/GitCommand.git
+
+	 git remote -v  可查看本地库关联了哪些远程库 
+
+	 git remote remove origin  删除远程库origin 
 
 7、远程git库与本地git库同步合并，拉取远端代码，更新本地库
 	 git pull --rebase origin master
 
+	 若远程库新建，没有任何文件，则可以跳过这一步
+
 8、将本地git库内容推送至远程git库
 	 git push -u origin master(初次推送，需要加上参数-u)
 
-9、
