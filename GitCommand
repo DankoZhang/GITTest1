@@ -9,8 +9,8 @@
 	 注：文件夹名称可以不写，不写默认将projectname作为本地文件夹名称
 
 2、本地修改代码文件，并同步至git仓库
-     git add test.scala				-- 添加更改
-     git commit -m "注释"			-- 提交更改
+     git add test.scala				-- 添加更改，从工作区至暂存区
+     git commit -m "注释"			-- 提交更改，从暂存区至当前分支
      git push -u origin master			-- 将更改推送至远程git仓库
 
 
@@ -53,3 +53,16 @@
 第一步：git rm 文件名
 第二步：git commit -m "delete ***"
 第三步：git push -u origin master
+
+
+四、回退版本
+
+1、没有git add之前，修改仍然在工作区
+	git checkout -- filename  将文件在工作区的修改全部撤销
+
+2、git add，但没有git commit，修改已经添加至暂存区，但没有至分支
+	第一步：git reset HEAD filename  将暂存区的修改撤销掉，重新放回工作区
+	第二步：git checkout -- filename  将文件在工作区的修改全部撤销
+
+3、git add、git commit都完成了
+	git reset --hard HEAD^ (一个 ^ 表示上一个版本，两个 ^ 表示上上个版本，以此类推)
