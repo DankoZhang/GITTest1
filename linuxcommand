@@ -36,3 +36,45 @@ Linux基础命令：
 
 7、终端显示：用户名@主机名，name@hostname
    修改hostname：sudo HostName ***
+
+8、修改终端配色：添加主题压缩包即可
+
+9、修改终端高亮：
+    1、安装插件zsh-syntax-highlighting：brew install zsh-syntax-highlighting    
+    2、添加 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 至文件.zshrc最后一行
+    3、让改变生效：source ~/.zshrc
+
+10、vim配置修改（包括配色）：
+    1、先下载配色主题：git clone https://github.com/tomasr/molokai.git 
+    2、将下载后~/molokai/colors文件夹中的文件拷贝到～/.vim/colors目录下
+    3、将下面配置复制到～/.vimrc中：
+         syntax enable
+         syntax on
+         set nocompatible
+         colorscheme molokai "需要下载molokai color scheme，看过最舒服的vim配色，谁用谁知道，地址https://github.com/tomasr/molokai
+         let g:rehash256 = 1
+         set t_Co=256
+         set backspace=2
+         set cindent
+         set cursorline
+         set cursorcolumn
+         set autoindent
+         set smartindent
+         set tabstop=4
+         set softtabstop=4
+         set shiftwidth=4
+         set expandtab
+         set showmatch
+         set incsearch
+         set hlsearch
+         set ignorecase
+         set smartcase
+         set number
+         set ruler
+         set encoding=utf-8
+         set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1 "编码匹配默认优先级顺序
+         set undofile
+         set undodir=~/.vimundodir
+~   4、让改变生效：source ~/.vimrc
+~
+~
