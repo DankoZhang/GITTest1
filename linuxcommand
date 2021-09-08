@@ -75,6 +75,34 @@ Linux基础命令：
          set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1 "编码匹配默认优先级顺序
          set undofile
          set undodir=~/.vimundodir
-~   (4)、让改变生效：source ~/.vimrc
-~
-~
+    (4)、让改变生效：source ~/.vimrc
+
+11、虚拟机免密登录
+    (1)配置ssh:
+        vim ~/.ssh/config
+        添加如下内容至文件中：
+        #官方文档：http://man.openbsd.org/ssh_config.5
+        #ControlMaster          连接共享
+        #ControlPath            与ControlMaster一起使用，指定连接共享的路径
+        #ControlPersist         与ControlMaster一起使用，在后台保持打开
+        #ServerAliveInterval    与服务器通讯的时间间隔（秒）
+        Host *
+        ControlMaster auto
+        ControlPath ~/.ssh/%r@%h:%p
+        ControlPersist yes
+        ServerAliveInterval 10
+   
+    (2)构建expect脚本（主要的目的是让一些操作自动化，而不在需人工去交互，即自动输入用户名和密码）
+        vim ~/.relay.expect
+        脚本内容，内网搜索即可http://wiki.baidu.com/pages/viewpage.action?pageId=1371074346
+    
+    (3)配置alias，构建简化命令，用于触发expect脚本
+        vim .zshrc 
+        # 重新定义expect（解决 rz/sz 工具异常的问题）
+        alias expect='export LC_CTYPE=en_US && expect'
+        # expect脚本接收四个参数：relay用户名 + relay密码 + 虚拟机host + 虚拟机密码
+        # 例如：alias ssh_dev='expect ～/.relay.expect zhangce06 pwd1 root@zhangce06.bcc-gzhxy.baidu.com pwd2'
+        alias ssh_dev='expect ～/.relay.expect relay用户名(邮箱前缀) relay密码 虚拟机host 虚拟机密码'
+    (4)使配置生效
+        source .zshrc
+
