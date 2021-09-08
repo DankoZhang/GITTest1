@@ -2,7 +2,7 @@ Linux基础命令：
 1、切换终端：bash($)和zsh(%)
    zsh切换到bash: chsh -s /bin/bash
    bash切换到zsh: chsh -s /bin/zsh
-:
+
 2、安装包管理工具brew(类似yum)
    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -37,17 +37,17 @@ Linux基础命令：
 7、终端显示：用户名@主机名，name@hostname
    修改hostname：sudo HostName ***
 
-8、修改终端配色：添加主题压缩包即可
+8、修改终端配色：在终端设置中，添加主题压缩包即可，具体可百度查询
 
 9、修改终端高亮：
-    1、安装插件zsh-syntax-highlighting：brew install zsh-syntax-highlighting    
-    2、添加 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 至文件.zshrc最后一行
-    3、让改变生效：source ~/.zshrc
+    (1)、安装插件zsh-syntax-highlighting：brew install zsh-syntax-highlighting    
+    (2)、添加 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 至文件.zshrc最后一行
+    (3)、让改变生效：source ~/.zshrc
 
 10、vim配置修改（包括配色）：
-    1、先下载配色主题：git clone https://github.com/tomasr/molokai.git 
-    2、将下载后~/molokai/colors文件夹中的文件拷贝到～/.vim/colors目录下
-    3、将下面配置复制到～/.vimrc中：
+    (1)、先下载配色主题：git clone https://github.com/tomasr/molokai.git 
+    (2)、将下载后~/molokai/colors文件夹中的文件拷贝到～/.vim/colors目录下
+    (3)、将下面配置复制到～/.vimrc中：
          syntax enable
          syntax on
          set nocompatible
@@ -75,6 +75,6 @@ Linux基础命令：
          set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1 "编码匹配默认优先级顺序
          set undofile
          set undodir=~/.vimundodir
-~   4、让改变生效：source ~/.vimrc
+~   (4)、让改变生效：source ~/.vimrc
 ~
 ~
