@@ -4,7 +4,13 @@
 	将远程git库同步至本地，并在本地进行更改，然后再推至远程库
 
 1、git仓库克隆至本地
- (1) git clone git@github.com:username/projectname.git 文件夹名称
+ (1) 采用ssh方式
+     cd ~/.ssh
+     rm -rf *
+     ssh-keygen -t rsa -C zhangcemvp@163.com # 根据github邮箱，创建ssh密钥，分为公钥和私钥
+     pbcopy < ~/.ssh/id_rsa.pub # 将公钥的内容复制
+     将公钥粘贴至github网站个人主页的ssh密钥配置处
+     git clone git@github.com:username/projectname.git 文件夹名称
 	 git clone git@github.com:DankoZhang/GitCommand.git 文件夹名称
 	 注：文件夹名称可以不写，不写默认将projectname作为本地文件夹名称
 
